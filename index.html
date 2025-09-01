@@ -6,7 +6,7 @@
     <title>Start Vânzări – Casa Pipera</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inria+Serif:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* CSS Reset and Base Styles */
 * {
@@ -24,7 +24,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Main Container - Exact Figma Dimensions */
+/* Main Container - Optimized */
 .main-container {
     width: 600px;
     height: auto;
@@ -32,6 +32,9 @@ body {
     background-color: #242424;
     position: relative;
     overflow: hidden;
+    font-family: 'Montserrat', Arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
 }
 
 /* Header Section */
@@ -95,7 +98,7 @@ body {
 .hero-background {
     width: 100%;
     height:600px;
-    background: url('assets/hero-background-21d472.jpg');
+    background: url('https://srv1427-files.hstgr.io/4c20f99aa8ccfa5e/api/preview/big/assets/Frame%201010.webp?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJsb2NhbGUiOiJlbl9HQiIsInZpZXdNb2RlIjoibGlzdCIsInNpbmdsZUNsaWNrIjpmYWxzZSwicGVybSI6eyJhZG1pbiI6ZmFsc2UsImV4ZWN1dGUiOmZhbHNlLCJjcmVhdGUiOnRydWUsInJlbmFtZSI6dHJ1ZSwibW9kaWZ5Ijp0cnVlLCJkZWxldGUiOnRydWUsInNoYXJlIjpmYWxzZSwiZG93bmxvYWQiOnRydWV9LCJjb21tYW5kcyI6W10sImxvY2tQYXNzd29yZCI6dHJ1ZSwiaGlkZURvdGZpbGVzIjpmYWxzZSwiZGF0ZUZvcm1hdCI6ZmFsc2V9LCJpc3MiOiJGaWxlIEJyb3dzZXIiLCJleHAiOjE3NTY3MTUzMDYsImlhdCI6MTc1NjcwODEwNn0.jFvSuwtWEMpMjikNBfPT14MDryf9ZcNrHFSJe99yXwU&inline=true&key=1756708140689');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -113,48 +116,39 @@ body {
 }
 
 .hero-title {
-    font-family: 'Inria Serif', Georgia, serif;
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 1.3em;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 800;
+    font-size: clamp(24px, 5vw, 36px);
+    line-height: 1.2em;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     color: #FFFFFF;
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
     width: 100%;
     height: auto;
+    letter-spacing: -0.5px;
 }
 
 .hero-subtitle {
-    font-family: 'Inria Serif', Georgia, serif;
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 1.5em;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 500;
+    font-size: clamp(14px, 3vw, 18px);
+    line-height: 1.4em;
     color: #FFFFFF;
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     width: 100%;
 }
 
 .company-name {
     color: #E2AF42;
-    font-weight: 600;
+    font-weight: 700;
+    font-family: 'Montserrat', Arial, sans-serif;
 }
 
-.features-list {
-    text-align: center;
-    margin-top: 20px;
-}
+/* Email Optimization - Removed duplicate */
 
-.feature-item {
-    font-family: 'Inria Serif', Georgia, serif;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 1.6em;
-    color: #FFFFFF;
-    margin-bottom: 10px;
-    text-align: center;
-}
+/* Features removed - not used */
 
 /* Hero CTA Button */
 .hero-cta {
@@ -243,27 +237,79 @@ body {
 }
 
 .property-image-container {
+    position: relative;
     border-radius: 10px;
-    overflow: hidden;
+    overflow: visible;
+    
     flex: 1;
-    max-width: 280px;
+    max-width: 300px;
+    height: 450px;
 }
 
-.property-image-container:first-child {
+.property-shadow {
+    position: absolute;
+    top: 10px;
+    right:  10px;
     width: 100%;
-    height: 180px;
-}
-
-.property-image-container:last-child {
-    width: 100%;
-    height: 180px;
+    height: 100%;
+    background-color: #E2AF42;
+    z-index: 1;
 }
 
 .property-image {
-    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width:100%;
     height: 100%;
     object-fit: cover;
+    z-index: 2;
 }
+
+.property-learn-more {
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    right: 0;
+    height: 35px;
+    border: 2px solid #E2AF42;
+    border-radius: 5px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.property-learn-more:hover {
+    background: #E2AF42;
+}
+
+.property-learn-more span {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #E2AF42;
+    transition: color 0.3s ease;
+}
+
+.property-learn-more:hover span {
+    color: #242424;
+}
+
+/* Property Description Section */
+.property-description-section {
+    position: relative;
+    width: 100%;
+    padding: 30px 20px 20px 20px;
+    margin: 50px 0 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 /* Location Section */
 .location-section {
@@ -276,14 +322,7 @@ body {
     justify-content: center;
 }
 
-.location-text {
-    font-family: 'Inria Serif', Georgia, serif;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 1.4em;
-    color: #FFFFFF;
-    text-align: center;
-}
+
 
 /* CTA Button Sections */
 .cta-section {
@@ -293,14 +332,19 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    border: #d49d35;
+    
+    
 }
 
 #cta-1 {
     margin: 30px 0;
+    
 }
 
 #cta-2 {
     margin: 30px 0;
+    
 }
 
 .cta-button {
@@ -308,9 +352,22 @@ body {
     align-items: center;
     gap: 21.95px;
     background: transparent;
-    border: none;
+    border: 2px solid #E2AF42;
+    border-radius: 10px;
     cursor: pointer;
-    padding: 10px 0;
+    padding: 15px 20px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.cta-button:hover {
+    background: rgba(226, 175, 66, 0.1);
+    transform: translateY(-2px);
+}
+
+.cta-button:hover .arrow-line,
+.cta-button:hover .arrow-circle {
+    border-color: #E2AF42;
 }
 
 .cta-text {
@@ -338,6 +395,8 @@ body {
     width: 110.5px;
     height: 1.45px;
     background-color: #E2AF42;
+    border: 1px solid #E2AF42;
+    transition: all 0.3s ease;
 }
 
 .arrow-circle {
@@ -348,6 +407,8 @@ body {
     height: 34.89px;
     border: 1.45px solid #E2AF42;
     border-radius: 50%;
+    background: transparent;
+    transition: all 0.3s ease;
 }
 
 /* Gallery Sections */
@@ -361,11 +422,11 @@ body {
 }
 
 #gallery-1 {
-    margin: 40px 0;
+    margin: 60px 0;
 }
 
 #gallery-2 {
-    margin: 40px 0;
+    margin: 60px 0;
 }
 
 #gallery-3 {
@@ -375,8 +436,8 @@ body {
 .gallery-frame {
     position: relative;
     width: 100%;
-    max-width: 500px;
-    height: 300px;
+    max-width: 400px;
+    height: 400px;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -406,7 +467,6 @@ body {
 .project-details-section {
     position: relative;
     width: 100%;
-    padding: 30px 20px;
     margin: 30px 0;
     display: flex;
     align-items: center;
@@ -414,7 +474,7 @@ body {
 }
 
 .project-details-text {
-    font-family: 'Inria Serif', Georgia, serif;
+    font-family: 'Montserrat', Arial, sans-serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.5em;
@@ -434,12 +494,17 @@ body {
 }
 
 .investment-text {
-    font-family: 'Inria Serif', Georgia, serif;
+    font-family: 'Montserrat', Arial, sans-serif;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.5em;
     color: #FFFFFF;
     text-align: center;
+}
+
+.final-investment-text {
+    font-weight: 600;
+    color: #C9BD95;
 }
 
 /* Final CTA Section */
@@ -454,7 +519,7 @@ body {
 }
 
 .final-cta-text {
-    font-family: 'Inria Serif', Georgia, serif;
+    font-family: 'Montserrat', Arial, sans-serif;
     font-weight: 700;
     font-size: 20px;
     line-height: 1.4em;
@@ -462,141 +527,67 @@ body {
     text-align: center;
 }
 
-/* Contact Form Section */
-.contact-form-section {
+/* Contact form styles removed - not used */
+
+/* Decorative Line Section */
+.decorative-line-section {
     position: relative;
     width: 100%;
-    padding: 40px 20px;
-    margin: 40px 0;
-    background: linear-gradient(135deg, rgba(226, 175, 66, 0.05) 0%, rgba(36, 36, 36, 0.8) 100%);
-    border: 1px solid rgba(226, 175, 66, 0.2);
-    border-radius: 15px;
-}
-
-.form-container {
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.form-title {
-    font-family: 'Inria Serif', Georgia, serif;
-    font-weight: 700;
-    font-size: 28px;
-    line-height: 1.3em;
-    color: #E2AF42;
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-.form-subtitle {
-    font-family: 'Inria Serif', Georgia, serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.5em;
-    color: #FFFFFF;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.form-row {
-    display: flex;
-    gap: 15px;
-}
-
-.form-row.full-width {
-    flex-direction: column;
-}
-
-.form-input,
-.form-textarea {
-    flex: 1;
-    padding: 15px 20px;
-    border: 2px solid rgba(226, 175, 66, 0.3);
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.05);
-    color: #FFFFFF;
-    font-family: 'Inria Serif', Georgia, serif;
-    font-size: 16px;
-    transition: all 0.3s ease;
-}
-
-.form-input:focus,
-.form-textarea:focus {
-    outline: none;
-    border-color: #E2AF42;
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 0 3px rgba(226, 175, 66, 0.1);
-}
-
-.form-input::placeholder,
-.form-textarea::placeholder {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.form-textarea {
-    resize: vertical;
-    min-height: 100px;
-}
-
-.form-submit-btn {
+    padding: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-    background: #E2AF42;
-    border: none;
-    border-radius: 50px;
-    padding: 18px 40px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin: 10px auto 0 auto;
-    width: fit-content;
+    margin: 30px 0;
 }
 
-.form-submit-btn:hover {
-    background: #d49d35;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(226, 175, 66, 0.4);
+.decorative-line {
+    width: 100%;
+    height: 3px;
+    background-color: #E2AF42;
+    max-width: 100%;
 }
 
-.form-submit-btn span {
-    font-family: 'Montserrat', Arial, sans-serif;
-    font-weight: 700;
-    font-size: 16px;
-    color: #242424;
-}
-
-.submit-arrow {
+/* Three Images Section */
+.three-images-section {
     position: relative;
-    width: 100px;
-    height: 30px;
+    width: 100%;
+    padding: 0 20px;
+    margin: 40px 0;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
 }
 
-.submit-arrow-line {
+.three-image-container {
+    position: relative;
+    width: 100%;
+    max-width: 180px;
+    height: 180px;
+    flex: 1;
+}
+
+.three-image-shadow {
     position: absolute;
-    top: 15px;
-    left: 0;
-    width: 80px;
-    height: 2px;
-    background-color: #242424;
+    top: 10px;
+    right: 10px;
+    width: 100%;
+    height: 100%;
+    background-color: #E2AF42;
+    z-index: 1;
 }
 
-.submit-arrow-circle {
+.three-image {
     position: absolute;
     top: 0;
-    right: 0;
-    width: 30px;
-    height: 30px;
-    border: 2px solid #242424;
-    border-radius: 50%;
-    background: transparent;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2;
 }
+
+/* All form styles removed - not used in email template */
 
 /* Footer Section */
 .footer-section {
@@ -635,6 +626,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #d49d35;
+    transform: translateY(-2px);
 }
 
 .phone-button {
@@ -752,19 +750,9 @@ body {
     }
 }
 
-/* Print Styles */
-@media print {
-    .main-container {
-        transform: none;
-        width: 891px;
-        height: auto;
-    }
-    
-    .cta-button,
-    .contact-button {
-        border: 2px solid #E2AF42;
-    }
-}
+
+
+/* Optimized for performance */
 
     </style>
 </head>
@@ -791,21 +779,16 @@ body {
             <div class="hero-background">
             </div>
             <div class="hero-content">
-                <h1 class="hero-title">Start Vânzări – Casa Pipera: locuințe premium în nordul Capitalei</h1>
+                <h1 class="hero-title">Start Vânzări – Proiect rezidențial premium în zona Unirii, cu avans de <span style="color: #E2AF42; font-weight: bold;">la doar 25%</span></h1>
                 <p class="hero-subtitle">
-                    <span class="company-name">North Bucharest Investments</span> anunță lansarea oficială a vânzărilor.<br>
-                    Un ansamblu rezidențial modern, poziționat pe Bulevardul Pipera – una dintre cele mai dinamice și atractive zone ale Bucureștiului.
+                    <span class="company-name">North Bucharest Investments</span>  are plăcerea de a anunța lansarea vânzărilor pentru un proiect rezidențial exclusiv, situat în zona Unirii – una dintre cele mai căutate și bine conectate zone ale Bucureștiului.
                 </p>
-                <div class="features-list">
-                    <div class="feature-item">✅ Avans de doar 30%</div>
-                    <div class="feature-item">✅ Achitare flexibilă direct de la dezvoltator</div>
-                    <div class="feature-item">✅ Proiect rezidențial cu design modern și facilități premium</div>
-                </div>
+                
                 
                 <!-- Hero CTA Button -->
                 <div class="hero-cta">
-                    <a href="#contact-form" class="hero-cta-button">
-                        <span class="hero-cta-text">SOLICITĂ OFERTA</span>
+                    <a href="https://forms.northbucharestinvestments.ro/" class="hero-cta-button">
+                        <span class="hero-cta-text">SOLICITĂ UN APEL</span>
                         <div class="hero-cta-arrow">
                             <div class="hero-arrow-line"></div>
                             <div class="hero-arrow-circle"></div>
@@ -814,123 +797,136 @@ body {
                 </div>
             </div>
             
-            <!-- Property Images Row -->
+             
             <div class="property-images-row">
                 <div class="property-image-container">
-                    <img src="assets/property-image-1.jpg" alt="Casa Pipera Property" class="property-image">
+                    <div class="property-shadow"></div>
+                    <img src="assets/Frame 1012.webp" alt="Casa Pipera Property" class="property-image">
+                    
                 </div>
                 <div class="property-image-container">
-                    <img src="assets/property-image-2.jpg" alt="Casa Pipera Property" class="property-image">
+                    <div class="property-shadow"></div>
+                    <img src="assets/Group 41.webp" alt="Casa Pipera Property" class="property-image">
+                   
                 </div>
             </div>
-        </div>
-        
-        <!-- Location Section -->
-        <div class="location-section">
-            <p class="location-text">📍 Localizare strategică: la câțiva pași de hub-ul de birouri și centre comerciale de top, cu acces facil la infrastructură urbană.</p>
-        </div>
-        
+            
         <!-- CTA Button 1 -->
         <div class="cta-section" id="cta-1">
-            <button class="cta-button" id="learnMore1">
+            <a href="https://www.northbucharestinvestments.ro/ro" class="cta-button" id="learnMore1">
                 <span class="cta-text">LEARN MORE</span>
                 <div class="cta-arrow">
                     <div class="arrow-line"></div>
                     <div class="arrow-circle"></div>
                 </div>
-            </button>
+            </a>
+        </div>
+
+
+         <!-- Project Details Section -->
+        <div class="project-details-section">
+            <p class="project-details-text">
+            Cu un avans preferențial începând de <span style="color: #E2AF42; font-weight: bold;">la doar 25%</span>, acest proiect oferă o combinație ideală între design modern, confort urban și accesibilitate:
+            </p>
+        </div>
+
+          <div class="decorative-line-section">
+            <div class="decorative-line"></div>
         </div>
         
         <!-- Gallery Section 1 -->
         <div class="gallery-section" id="gallery-1">
             <div class="gallery-frame">
                 <div class="gallery-shadow"></div>
-                <img src="assets/gallery-image-1.jpg" alt="Casa Pipera Gallery" class="gallery-image">
+                <img src="assets/Group 45.webp" alt="Casa Pipera Gallery" class="gallery-image">
             </div>
         </div>
         
-        <!-- Project Details Section -->
-        <div class="project-details-section">
-            <p class="project-details-text">
-                🔑 Detalii proiect:<br>
-                195 de apartamente: garsoniere, studio-uri, apartamente cu 2, 3 și 4 camere<br>
-                Suprafețe eficiente și compartimentări inteligente<br>
-                234 locuri de parcare subterane, inclusiv sisteme tip Klaus dublu<br>
-                Fațadă ventilată cu finisaje moderne și balcoane generoase<br>
-                1.575 m² de spații verzi pentru relaxare și comunitate
-            </p>
-        </div>
+
         
         <!-- Gallery Section 2 -->
         <div class="gallery-section" id="gallery-2">
             <div class="gallery-frame">
                 <div class="gallery-shadow"></div>
-                <img src="assets/gallery-image-2.jpg" alt="Casa Pipera Gallery" class="gallery-image">
+                <img src="assets/Group 44.webp" alt="Casa Pipera Gallery" class="gallery-image">
             </div>
         </div>
         
-        <!-- CTA Button 2 -->
-        <div class="cta-section" id="cta-2">
-            <button class="cta-button" id="learnMore2">
-                <span class="cta-text">LEARN MORE</span>
-                <div class="cta-arrow">
-                    <div class="arrow-line"></div>
-                    <div class="arrow-circle"></div>
-                </div>
-            </button>
-        </div>
         
         <!-- Investment Value Section -->
         <div class="investment-section">
-            <p class="investment-text">📈 Cu un mix între poziționare premium, eficiență energetică și facilități integrate, Casa Pipera reprezintă o alegere solidă atât pentru locuire, cât și pentru investiție.</p>
+            <p class="investment-text">Arhitectură contemporană, cu fațadă ventilată și finisaje premium
+Încălzire în pardoseală și soluții integrate de smart house pentru un confort superior
+Balustrade din sticlă pentru spații luminoase și design elegant
+Unități variate: studiouri, apartamente de 2, 3 și 4 camere
+Clinică medicală privată integrată în complex</p>
         </div>
         
-        <!-- Gallery Section 3 -->
-        <div class="gallery-section" id="gallery-3">
-            <div class="gallery-frame">
-                <div class="gallery-shadow"></div>
-                <img src="assets/gallery-image-3.jpg" alt="Casa Pipera Gallery" class="gallery-image">
+       
+        
+        <!-- Decorative Line -->
+        <div class="decorative-line-section">
+            <div class="decorative-line"></div>
+        </div>
+        
+        <!-- Three Images Row -->
+        <div class="three-images-section">
+            <div class="three-image-container">
+                <div class="three-image-shadow"></div>
+                <img src="assets/Group 41 (1).webp" alt="Project Image" class="three-image">
+            </div>
+            <div class="three-image-container">
+                <div class="three-image-shadow"></div>
+                <img src="assets/Frame 1022.webp" alt="Project Image" class="three-image">
+            </div>
+            <div class="three-image-container">
+                <div class="three-image-shadow"></div>
+                <img src="assets/Group 43.webp" alt="Project Image" class="three-image">
             </div>
         </div>
+
+        <p class="investment-text">
+            Acces rapid la metrou, autobuz, tramvai și principalele artere din București
+În vecinătate: centre comerciale, restaurante, spații verzi și zone culturale</p>
         
-        <!-- Final CTA Section -->
-        <div class="final-cta-section">
-            <p class="final-cta-text">
-                Acum este momentul să îți alegi apartamentul!<br>
-                📩 Solicită oferta completă și programează o vizionare.
-            </p>
+        <!-- Decorative Line -->
+        <div class="decorative-line-section">
+            <div class="decorative-line"></div>
         </div>
         
       
         </div>
+
+        <p class="investment-text final-investment-text">O oportunitate unică pentru investitori și cumpărători – un proiect gândit să redefinească standardele de confort urban și să asigure apreciere în timp a valorii investiției.
+Pentru detalii și programări, contactează-ne acum și descoperă oferta completă.</p>
         
         <!-- Footer -->
-        <div class="footer-section">
+        <div class="footer-section" id="footer-section">
             <div class="footer-logo-container">
                 <img src="assets/north-bucharest-logo-footer.svg" alt="North Bucharest Investments" class="footer-logo">
             </div>
             <div class="footer-contact">
-                <button class="contact-button phone-button" id="phoneButton">
+                <a href="tel:0727773180" class="contact-button phone-button" id="phoneButton">
                     <span>0727-773-180</span>
-                </button>
-                <button class="contact-button website-button" id="websiteButton">
+                </a>
+                <a href="https://www.northbucharestinvestments.ro" target="_blank" class="contact-button website-button" id="websiteButton">
                     <span>www.northbucharestinvestments.ro</span>
-                </button>
+                </a>
             </div>
             
             <!-- Social Media Icons -->
             <div class="social-media-container">
-                <a href="https://linkedin.com/company/northbucharestinvestments" target="_blank" class="social-icon linkedin-icon">
+                <a href="https://www.linkedin.com/company/north-bucharest-investments/?viewAsMember=true" target="_blank" class="social-icon linkedin-icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M20.447 20.452H16.893V14.883C16.893 13.555 16.866 11.846 15.041 11.846C13.188 11.846 12.905 13.291 12.905 14.785V20.452H9.351V9H12.765V10.561H12.811C13.288 9.661 14.448 8.711 16.181 8.711C19.782 8.711 20.448 11.081 20.448 14.166V20.452H20.447ZM5.337 7.433C4.193 7.433 3.274 6.507 3.274 5.366C3.274 4.224 4.194 3.299 5.337 3.299C6.477 3.299 7.401 4.224 7.401 5.366C7.401 6.507 6.476 7.433 5.337 7.433ZM7.119 20.452H3.555V9H7.119V20.452ZM22.225 0H1.771C0.792 0 0 0.774 0 1.729V22.271C0 23.227 0.792 24 1.771 24H22.222C23.2 24 24 23.227 24 22.271V1.729C24 0.774 23.2 0 22.222 0H22.225Z" fill="#E2AF42"/>
                     </svg>
                 </a>
-                <a href="https://instagram.com/northbucharestinvestments" target="_blank" class="social-icon instagram-icon">
+                <a href="https://www.instagram.com/northbucharestinvestments.ro?igsh=MW5icjJpZ240MHNoZg==" target="_blank" class="social-icon instagram-icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 2.163C15.204 2.163 15.584 2.175 16.85 2.233C20.102 2.381 21.621 3.924 21.769 7.152C21.827 8.417 21.838 8.797 21.838 12.001C21.838 15.206 21.826 15.585 21.769 16.85C21.62 20.075 20.105 21.621 16.85 21.769C15.584 21.827 15.206 21.839 12 21.839C8.796 21.839 8.416 21.827 7.151 21.769C3.891 21.62 2.38 20.07 2.232 16.849C2.174 15.584 2.162 15.205 2.162 12C2.162 8.796 2.175 8.417 2.232 7.151C2.381 3.924 3.896 2.38 7.151 2.232C8.417 2.175 8.796 2.163 12 2.163ZM12 0C8.741 0 8.333 0.014 7.053 0.072C2.695 0.272 0.273 2.69 0.073 7.052C0.014 8.333 0 8.741 0 12C0 15.259 0.014 15.668 0.072 16.948C0.272 21.306 2.69 23.728 7.052 23.928C8.333 23.986 8.741 24 12 24C15.259 24 15.668 23.986 16.948 23.928C21.302 23.728 23.73 21.31 23.927 16.948C23.986 15.668 24 15.259 24 12C24 8.741 23.986 8.333 23.928 7.053C23.732 2.699 21.311 0.273 16.949 0.073C15.668 0.014 15.259 0 12 0ZM12 5.838C8.597 5.838 5.838 8.597 5.838 12C5.838 15.403 8.597 18.162 12 18.162C15.403 18.162 18.162 15.403 18.162 12C18.162 8.597 15.403 5.838 12 5.838ZM12 16C9.791 16 8 14.209 8 12C8 9.791 9.791 8 12 8C14.209 8 16 9.791 16 12C16 14.209 14.209 16 12 16ZM18.406 4.155C17.61 4.155 16.965 4.8 16.965 5.595C16.965 6.39 17.61 7.035 18.406 7.035C19.201 7.035 19.845 6.39 19.845 5.595C19.845 4.8 19.201 4.155 18.406 4.155Z" fill="#E2AF42"/>
                     </svg>
                 </a>
-                <a href="https://tiktok.com/@northbucharestinvestments" target="_blank" class="social-icon tiktok-icon">
+                <a href="https://www.tiktok.com/@northbucharestinvestment?_t=ZN-8yEizUkJxl0&_r=1" target="_blank" class="social-icon tiktok-icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M19.321 5.562C18.508 4.811 18.02 3.729 18.02 2.563V2H15.275V15.5C15.275 17.485 13.66 19.1 11.675 19.1C9.69 19.1 8.075 17.485 8.075 15.5C8.075 13.515 9.69 11.9 11.675 11.9C12.018 11.9 12.345 11.957 12.652 12.062V9.25C12.332 9.208 12.006 9.187 11.675 9.187C8.195 9.187 5.362 12.02 5.362 15.5C5.362 18.98 8.195 21.813 11.675 21.813C15.155 21.813 17.988 18.98 17.988 15.5V8.799C19.245 9.688 20.766 10.188 22.387 10.188V7.475C21.294 7.475 20.236 7.115 19.321 6.525V5.562Z" fill="#E2AF42"/>
                     </svg>
